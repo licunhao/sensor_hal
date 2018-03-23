@@ -46,15 +46,11 @@ struct sensor_t *get_default_sensor(int type)
     struct sensor_t *sensor = sensor_list;
     if (sensor == NULL) return NULL;
 
-    printf("1\n");
     do {
         if(sensor->type == type) return sensor;
-    printf("2\n");
 
         sensor = sensor->next;
-    printf("3\n");
     } while(sensor != sensor_list);
-    printf("4\n");
 
     return NULL;
 }
@@ -64,7 +60,9 @@ int sensors_poll(struct sensor_event_t **event)
     struct sensor_t *sensor = sensor_list;
     if (sensor == NULL) return -1;
 
+
     if(*event == NULL || event == NULL) return -1;
+
 
     do {
         sensor->poll(*event);
