@@ -1,2 +1,2 @@
 # sensor_hal
-Cplatform Sensor HAL
+C platform Sensor HAL
